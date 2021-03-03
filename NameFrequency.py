@@ -19,6 +19,7 @@ class NameFrequency:
         data = pd.read_csv(file_name)
         data.dropna(inplace=True)
         data_frame = dict(data[column_name].str.split(" ", n=1, expand=True))
+        data_frame = pd.DataFrame(data_frame)
         self.data_frame = data_frame
         if isinstance(self.data_frame, pd.DataFrame):
             return True
